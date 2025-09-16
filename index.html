@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenya Wildlife Gallery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0d1b2a;
+      color: #eee;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      background: rgba(17, 38, 59, 0.95);
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffd166;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #06d6a0;
+      text-shadow: 0 0 10px #06d6a0;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 6rem 1rem 3rem;
+      background: linear-gradient(135deg, #1b263b, #0d1b2a);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #ffd166;
+      text-shadow: 0 0 10px rgba(255, 209, 102, 0.8);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      backface-visibility: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .card-front {
+      background: #111;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-back {
+      background: #1b263b;
+      color: #fff;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .card-back h3 {
+      margin-bottom: 1rem;
+      color: #ffd166;
+    }
+
+    .card-back p {
+      font-size: 0.95rem;
+      color: #eee;
+    }
+
+    /* Footer */
+    footer {
+      background: #1b263b;
+      color: #bbb;
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#">Big 5</a></li>
+      <li><a href="#">Birds</a></li>
+      <li><a href="#">Marine Life</a></li>
+      <li><a href="#">Show All</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Kenya Wildlife Gallery</h1>
+    <p>Explore the wonders of Kenya’s wildlife – where nature comes alive</p>
+  </header>
+
+  <section class="gallery">
+    <!-- Lion -->
+    <div class="card big5">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./assets/lion.png" alt="Lion">
+        </div>
+        <div class="card-back">
+          <h3>Lion</h3>
+          <p>Fun Fact: Lions are the only cats that live in groups, called prides.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Elephant -->
+    <div class="card big5">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./assets/elephant.png" alt="Elephant">
+        </div>
+        <div class="card-back">
+          <h3>Elephant</h3>
+          <p>Fun Fact: Elephants can recognize themselves in mirrors, showing high intelligence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leopard -->
+    <div class="card big5">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./assets/leopard.png" alt="Leopard">
+        </div>
+        <div class="card-back">
+          <h3>Leopard</h3>
+          <p>Fun Fact: Leopards can carry prey heavier than themselves up into trees.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buffalo -->
+    <div class="card big5">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./assets/boffalo roy.jpeg" alt="Buffalo">
+        </div>
+        <div class="card-back">
+          <h3>Cape Buffalo</h3>
+          <p>Fun Fact: Cape buffalos are unpredictable and can chase predators like lions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rhino -->
+    <div class="card big5">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./assets/rhino.jpeg" alt="Rhino">
+        </div>
+        <div class="card-back">
+          <h3>Rhino</h3>
+          <p>Fun Fact: Rhinos have poor eyesight but excellent hearing and smell.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flamingo -->
+    <div class="card birds">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./assets/flammingo.jpeg" alt="Flamingo">
+        </div>
+        <div class="card-back">
+          <h3>Flamingo</h3>
+          <p>Fun Fact: Flamingos get their pink color from the food they eat, like shrimp and algae.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dolphin -->
+    <div class="card marine">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./assets/dolphins.jpeg" alt="Dolphin">
+        </div>
+        <div class="card-back">
+          <h3>Dolphin</h3>
+          <p>Fun Fact: Dolphins use unique whistles to call each other by name.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Turtle -->
+    <div class="card marine">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./assets/turtle.jpeg" alt="Turtle">
+        </div>
+        <div class="card-back">
+          <h3>Sea Turtle</h3>
+          <p>Fun Fact: Some sea turtles migrate over 1,600 miles between feeding and nesting grounds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kenya Wildlife Gallery. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
